@@ -12,6 +12,7 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       drawerScrimColor: kColorGrey,
       drawer: Drawer(),
@@ -35,56 +36,7 @@ class HomeView extends StatelessWidget {
               reverse: false,
             ),
             items: image.map((i) {
-              return Container(
-                  height: 300,
-                  width: 300,
-                  margin: EdgeInsets.only(top: 4, bottom: 16),
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                          color: const Color(0x59000000),
-                          offset: Offset(0, 4),
-                          blurRadius: 6)
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Stack(
-                      children: <Widget>[
-                        Container(
-                          child: Image.network(i, fit: BoxFit.cover),
-                          width: 300,
-                        ),
-                        Positioned(
-                          bottom: 0,
-                          child: Container(
-                            padding: EdgeInsets.all(8),
-                            height: 60,
-                            width: 300,
-                            color: Colors.black45,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  'Titulo',
-                                  style: kTitleWhite,
-                                ),
-                                Text(
-                                  'Subtitulo',
-                                  style: TextStyle(color: Colors.white),
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ));
+              return ;
             }).toList(),
           ),
           Container(
@@ -96,9 +48,9 @@ class HomeView extends StatelessWidget {
                     children: <Widget>[
                       Container(
                         width: returnWidth(
-                            small: 11,
-                            medium: 8,
-                            large: 8,
+                            small: 10,
+                            medium: 12,
+                            large: 12,
                             width: MediaQuery.of(context).size.width),
                         height: 100.0,
                         decoration: BoxDecoration(
