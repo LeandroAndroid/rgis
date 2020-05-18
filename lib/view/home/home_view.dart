@@ -49,14 +49,19 @@ class HomeView extends StatelessWidget {
               }).toList(),
             ),
           ),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text('Noticias', style: TextStyle(
-                fontSize: 25,
-                color: kColorGrey,
-                fontWeight: FontWeight.w300
-              ),),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(Icons.info, color: kColorBlue,),
+                SizedBox(width: 8,),
+                Text('Notícias', style: TextStyle(
+                    fontSize: 25,
+                    color: kColorGrey,
+                    fontWeight: FontWeight.w300
+                ),)
+              ],
             ),
           ),
           Container(
