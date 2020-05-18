@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:rgis/constants/designer_pattern.dart';
 import 'package:rgis/constants/functions.dart';
+import 'package:rgis/models/mural.dart';
 
 class CardMural extends StatelessWidget {
 
-  final String urlImage;
-  final String title;
-  final String subtitle;
+  final Mural mural;
 
 
-  CardMural({@required this.urlImage,@required this.title,@required this.subtitle});
+  CardMural({@required this.mural});
 
   @override
   Widget build(BuildContext context) {
-    final double _widthCarrosel = returnWidth(small: 10, medium: 4, large: 4,width: MediaQuery.of(context).size.width);
+    final double _widthCarrosel = returnWidth(small: 10, medium: 10, large: 10,width: MediaQuery.of(context).size.width);
 
     return Container(
         width: _widthCarrosel,
@@ -33,7 +32,7 @@ class CardMural extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Container(
-                child: Image.network(this.urlImage, fit: BoxFit.cover),
+                child: Image.network(this.mural.image, fit: BoxFit.cover),
                 width: _widthCarrosel,
               ),
               Positioned(
@@ -47,11 +46,11 @@ class CardMural extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        this.title,
+                        this.mural.title,
                         style: kTitleWhite,
                       ),
                       Text(
-                        this.subtitle,
+                        this.mural.subtitle,
                         style: TextStyle(color: Colors.white),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
