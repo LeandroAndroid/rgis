@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rgis/constants/designer_pattern.dart';
 import 'package:rgis/constants/functions.dart';
 import 'package:rgis/models/mural.dart';
+import 'package:rgis/view/home/mural_view.dart';
 
 class MuralTile extends StatelessWidget {
   final Mural mural;
@@ -21,7 +22,11 @@ class MuralTile extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 16),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context)=> MuralView(this.mural))
+          );
+        },
         child: Stack(
           children: <Widget>[
             Container(

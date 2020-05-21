@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rgis/constants/designer_pattern.dart';
 import 'package:rgis/constants/functions.dart';
 import 'package:rgis/models/mural.dart';
+import 'package:rgis/view/home/mural_view.dart';
 
 class CardMural extends StatelessWidget {
 
@@ -15,7 +16,11 @@ class CardMural extends StatelessWidget {
     final double _widthCarrosel = returnWidth(small: 10, medium: 10, large: 10,width: MediaQuery.of(context).size.width);
 
     return InkWell(
-      onTap: (){},
+      onTap: (){
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context)=> MuralView(this.mural))
+        );
+      },
       child: Container(
           width: _widthCarrosel,
           margin: EdgeInsets.only(top: 4, bottom: 16),
@@ -49,6 +54,7 @@ class CardMural extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           this.mural.title,
+                          maxLines: 1,
                           style: kTitleWhite,
                         ),
                         Text(

@@ -12,8 +12,8 @@ const kColorGrey = Color(0xFF404041);
 //GRADIENTS
 
 const kLinearGradientGrey = LinearGradient(
-  begin: Alignment(-1.19, -1.3),
-  end: Alignment(1.39, 1.42),
+  begin: Alignment(0.0, -1.0),
+  end: Alignment(0.0, 1.0),
   colors: [const Color(0xff404142), const Color(0xff0d0d0d)],
   stops: [0.0, 1.0],
 );
