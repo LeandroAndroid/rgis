@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:rgis/constants/designer_pattern.dart';
-import 'package:rgis/constants/functions.dart';
 import 'package:rgis/models/mural.dart';
 import 'package:rgis/widgets/card_mural.dart';
 import 'package:rgis/widgets/custom_drawer.dart';
