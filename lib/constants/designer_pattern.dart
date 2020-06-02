@@ -8,9 +8,9 @@ const kColorBlue2 = Color(0xFF1E485E);
 const kColorGreen = Color(0xFF4B905F);
 const kColorGreen2 = Color(0xFF2B6D3F);
 const kColorGrey = Color(0xFF404041);
+const kColorBackground = Color(0xFFF1F4F7);
 
 //GRADIENTS
-
 const kLinearGradientGrey = LinearGradient(
   begin: Alignment(0.0, -1.0),
   end: Alignment(0.0, 1.0),
@@ -23,5 +23,11 @@ const kTitleWhite = TextStyle(
   color: Colors.white,
   fontSize: 18,
   fontWeight: FontWeight.w700
+);
+
+const kLoginStyle = TextStyle(
+  color: kColorGrey,
+  fontSize: 40,
+  fontWeight: FontWeight.w500
 );
 

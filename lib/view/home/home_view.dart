@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:rgis/constants/designer_pattern.dart';
 import 'package:rgis/models/mural.dart';
+import 'package:rgis/models/navigation_item.dart';
+import 'package:rgis/widgets/bottom_navy_bar.dart';
 import 'package:rgis/widgets/card_mural.dart';
 import 'package:rgis/widgets/custom_drawer.dart';
 import 'package:rgis/widgets/mural_tile.dart';
@@ -46,11 +48,20 @@ class HomeView extends StatelessWidget {
             'https://cdn.awsli.com.br/600x450/26/26503/produto/31963057/6bfff3df86.jpg'),
   ];
 
+  List<NavigationItem> items = [
+    NavigationItem(color: kColorGrey,title: Text('Home'),icon: Icon(Icons.home), onTap: (){}),
+    NavigationItem(color: kColorWine2,title: Text('Likes'),icon: Icon(Icons.favorite_border), onTap: (){}),
+    NavigationItem(color: kColorGreen2,title: Text('Search'),icon: Icon(Icons.search), onTap: (){}),
+    NavigationItem(color: kColorBlue2,title: Text('Profile'),icon: Icon(Icons.person_outline), onTap: (){}),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kColorBackground,
       drawerScrimColor: kColorGrey,
       drawer: CustomDrawer(),
+      bottomNavigationBar: BottomNavyBar(items: items,),
       appBar: AppBar(
         iconTheme: IconThemeData(color: kColorGrey),
         title: Text(
@@ -62,63 +73,10 @@ class HomeView extends StatelessWidget {
         elevation: 0,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  height: 200,
-                  initialPage: 0,
-                  enlargeCenterPage: true,
-                  autoPlay: false,
-                  reverse: false,
-                ),
-                items: image.map((i) {
-                  return CardMural(
-                    mural: i,
-                  );
-                }).toList(),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(
-                    Icons.info,
-                    color: kColorBlue,
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    'Notícias',
-                    style: TextStyle(
-                        fontSize: 25,
-                        color: kColorGrey,
-                        fontWeight: FontWeight.w300),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.55,
-              child: ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  itemCount: image.length,
-                  itemBuilder: (context, index) {
-                    return Center(
-                      child: MuralTile(
-                        mural: image[index],
-                      ),
-                    );
-                  }),
-            )
-          ],
+        child: Container(
         ),
       ),
     );
   }
 }
+

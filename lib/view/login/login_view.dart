@@ -10,6 +10,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kColorBackground,
       body: Container(
         decoration: BoxDecoration(gradient: kLinearGradientGrey),
         child: Center(
@@ -37,11 +38,11 @@ class LoginView extends StatelessWidget {
                       elevation: 0,
                       color: kColorWine,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(16))
+                          borderRadius: BorderRadius.all(Radius.circular(16))
                       ),
                       onPressed: (){
                         Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context)=> HomeView())
+                            MaterialPageRoute(builder: (context)=> HomeView())
                         );
                       },
                       child: Text('ENTRAR', style: kTitleWhite.copyWith(fontSize: 15),),
