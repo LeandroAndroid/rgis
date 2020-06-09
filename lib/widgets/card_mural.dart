@@ -27,19 +27,14 @@ class CardMural extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.grey,
             borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(
-                  color: const Color(0x59000000),
-                  offset: Offset(0, 4),
-                  blurRadius: 6)
-            ],
+
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(16),
             child: Stack(
               children: <Widget>[
                 Container(
-                  child: Image.network(this.mural.image, fit: BoxFit.cover),
+                  child: Image.network(this.mural.image, fit: BoxFit.fill),
                   width: _widthCarrosel,
                 ),
                 Positioned(
@@ -58,7 +53,7 @@ class CardMural extends StatelessWidget {
                           style: kTitleWhite,
                         ),
                         Text(
-                          this.mural.subtitle,
+                          this.mural.dataPublish,
                           style: TextStyle(color: Colors.white),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
@@ -69,7 +64,7 @@ class CardMural extends StatelessWidget {
                 )
               ],
             ),
-          )),
+          ),),
     );
   }
 }

@@ -20,9 +20,9 @@ const kLinearGradientGrey = LinearGradient(
 
 //TEXTSTYLES
 const kTitleWhite = TextStyle(
-  color: Colors.white,
-  fontSize: 18,
-  fontWeight: FontWeight.w700
+    color: Colors.white,
+    fontSize: 18,
+    fontWeight: FontWeight.w700
 );
 
 const kLoginStyle = TextStyle(

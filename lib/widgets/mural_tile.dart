@@ -48,7 +48,7 @@ class MuralTile extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    mural.dataPublicado,
+                    mural.dataPublish,
                     style: TextStyle(color: kColorGrey, fontSize: 12),
                   ),
                   SizedBox(

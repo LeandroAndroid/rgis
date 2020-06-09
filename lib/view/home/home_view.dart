@@ -1,58 +1,35 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:rgis/constants/designer_pattern.dart';
-import 'package:rgis/models/mural.dart';
 import 'package:rgis/models/navigation_item.dart';
 import 'package:rgis/widgets/bottom_navy_bar.dart';
 import 'package:rgis/widgets/card_mural.dart';
 import 'package:rgis/widgets/custom_drawer.dart';
-import 'package:rgis/widgets/mural_tile.dart';
 
 class HomeView extends StatelessWidget {
-  List<Mural> image = [
-    Mural(
-        title: 'Novos Serviços',
-        subtitle: 'Teste1',
-        dataPublicado: '17/05/2020 10:23',
-        image:
-            'https://media.glassdoor.com/l/e5/93/7e/cd/tablet-verification.jpg'),
-    Mural(
-        title: 'Corana Virus',
-        subtitle: 'Teste1',
-        dataPublicado: '17/05/2020 10:23',
-        image:
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSjo_21SS0nw2OYu1OoiFQkSk-JyuwOYu063h89-7jpdPNFlyb1&usqp=CAU'),
-    Mural(
-        title: 'Novas Tecnologias',
-        subtitle: 'Teste1',
-        dataPublicado: '17/05/2020 10:23',
-        image:
-            'https://cdn.awsli.com.br/600x450/26/26503/produto/31963057/6bfff3df86.jpg'),
-    Mural(
-        title: 'Novas Tecnologias',
-        subtitle: 'Teste1',
-        dataPublicado: '17/05/2020 10:23',
-        image:
-            'https://cdn.awsli.com.br/600x450/26/26503/produto/31963057/6bfff3df86.jpg'),
-    Mural(
-        title: 'Novas Tecnologias',
-        subtitle: 'Teste1',
-        dataPublicado: '17/05/2020 10:23',
-        image:
-            'https://cdn.awsli.com.br/600x450/26/26503/produto/31963057/6bfff3df86.jpg'),
-    Mural(
-        title: 'Novas Tecnologias',
-        subtitle: 'Teste1',
-        dataPublicado: '17/05/2020 10:23',
-        image:
-            'https://cdn.awsli.com.br/600x450/26/26503/produto/31963057/6bfff3df86.jpg'),
-  ];
+
 
   List<NavigationItem> items = [
-    NavigationItem(color: kColorGrey,title: Text('Home'),icon: Icon(Icons.home), onTap: (){}),
-    NavigationItem(color: kColorWine2,title: Text('Likes'),icon: Icon(Icons.favorite_border), onTap: (){}),
-    NavigationItem(color: kColorGreen2,title: Text('Search'),icon: Icon(Icons.search), onTap: (){}),
-    NavigationItem(color: kColorBlue2,title: Text('Profile'),icon: Icon(Icons.person_outline), onTap: (){}),
+    NavigationItem(
+        color: kColorGrey,
+        title: Text('Home'),
+        icon: Icon(Icons.home),
+        onTap: () {}),
+    NavigationItem(
+        color: kColorWine2,
+        title: Text('Likes'),
+        icon: Icon(Icons.favorite_border),
+        onTap: () {}),
+    NavigationItem(
+        color: kColorGreen2,
+        title: Text('Search'),
+        icon: Icon(Icons.search),
+        onTap: () {}),
+    NavigationItem(
+        color: kColorBlue2,
+        title: Text('Profile'),
+        icon: Icon(Icons.person_outline),
+        onTap: () {}),
   ];
 
   @override
@@ -61,7 +38,9 @@ class HomeView extends StatelessWidget {
       backgroundColor: kColorBackground,
       drawerScrimColor: kColorGrey,
       drawer: CustomDrawer(),
-      bottomNavigationBar: BottomNavyBar(items: items,),
+      bottomNavigationBar: BottomNavyBar(
+        items: items,
+      ),
       appBar: AppBar(
         iconTheme: IconThemeData(color: kColorGrey),
         title: Text(
@@ -74,9 +53,35 @@ class HomeView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                //height: 300,
+                child: Swiper(
+                  itemCount: image.length,
+                  itemWidth: MediaQuery.of(context).size.width * 60,
+                  fade: 10,
+                  pagination: SwiperPagination(
+                    builder: DotSwiperPaginationBuilder(
+                      color: Colors.white,
+                      activeColor: kColorGrey,
+                      space: 8,
+                      activeSize: 15,
+                    )
+                  ),
+                  itemHeight:250,
+                  layout: SwiperLayout.TINDER,
+                  itemBuilder: (context, index) {
+                    return CardMural(
+                      mural: image[index],
+                    );
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 }
-

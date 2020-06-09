@@ -42,7 +42,7 @@ class MuralView extends StatelessWidget {
                     margin: EdgeInsets.only(top: 240, left: 40),
                   ),
                   Container(
-                    child: Text(mural.dataPublicado, style: kTitleWhite.copyWith(fontSize: 12),),
+                    child: Text(mural.dataPublish, style: kTitleWhite.copyWith(fontSize: 12),),
                     margin: EdgeInsets.only(left: 40),
                   )
                 ],

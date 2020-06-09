@@ -1,17 +1,19 @@
 class Mural{
 
+  String id;
   String title;
-  String subtitle;
   String image;
-  String dataPublicado;
+  String dataPublish;
+  List<String> content;
 
-  Mural({this.title, this.subtitle, this.image, this.dataPublicado});
+  Mural({this.id, this.title, this.image, this.dataPublish, this.content});
 
   Mural.fromJson(Map<String, dynamic> json){
+    this.id = json['id'];
     this.title = json['title'];
-    this.subtitle = json['subtitle'];
     this.image = json['image'];
-    this.dataPublicado = json['dataPublicado'];
+    this.dataPublish = json['dataPublish'];
+    this.content = json['content'];
   }
 
 

@@ -3,7 +3,6 @@ import 'package:rgis/constants/designer_pattern.dart';
 import 'package:rgis/models/navigation_item.dart';
 
 class BottomNavyBar extends StatefulWidget {
-
   final List<NavigationItem> items;
 
   BottomNavyBar({this.items});
@@ -13,7 +12,6 @@ class BottomNavyBar extends StatefulWidget {
 }
 
 class _BottomNavyBarState extends State<BottomNavyBar> {
-
   int selectedIndex = 0;
   Color backgroundColor = Colors.white;
 
@@ -37,8 +35,7 @@ class _BottomNavyBarState extends State<BottomNavyBar> {
             children: <Widget>[
               IconTheme(
                 data: IconThemeData(
-                    size: 24,
-                    color: isSelected ? item.color : Colors.black87),
+                    size: 24, color: isSelected ? item.color : Colors.black87),
                 child: item.icon,
               ),
               isSelected
