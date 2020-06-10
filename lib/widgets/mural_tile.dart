@@ -6,8 +6,6 @@ import 'package:rgis/view/home/mural_view.dart';
 
 class MuralTile extends StatelessWidget {
   final Mural mural;
-  String text =
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
   MuralTile({@required this.mural});
 
@@ -48,14 +46,14 @@ class MuralTile extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    mural.dataPublish,
+                    mural.datePublish,
                     style: TextStyle(color: kColorGrey, fontSize: 12),
                   ),
                   SizedBox(
                     height: 8,
                   ),
                   Text(
-                    text,
+                    mural.content[0],
                     maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(color: kColorGrey, fontSize: 12),

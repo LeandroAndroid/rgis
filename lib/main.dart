@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:rgis/constants/designer_pattern.dart';
 import 'package:rgis/view/login/login_view.dart';
 

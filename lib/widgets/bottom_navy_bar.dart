@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rgis/constants/designer_pattern.dart';
 import 'package:rgis/models/navigation_item.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BottomNavyBar extends StatefulWidget {
   final List<NavigationItem> items;
@@ -41,9 +41,9 @@ class _BottomNavyBarState extends State<BottomNavyBar> {
               isSelected
                   ? Container(
                       child: DefaultTextStyle(
-                        style: TextStyle(
+                        style: GoogleFonts.quicksand(
                           fontWeight: FontWeight.w600,
-                          color: item.color,
+                          color: item.color
                         ),
                         child: item.title,
                       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // COLORS
 const kColorWine = Color(0xFF990033);
@@ -19,13 +20,13 @@ const kLinearGradientGrey = LinearGradient(
 );
 
 //TEXTSTYLES
-const kTitleWhite = TextStyle(
+TextStyle kTitleWhite = GoogleFonts.quicksand(
     color: Colors.white,
     fontSize: 18,
     fontWeight: FontWeight.w700
 );
 
-const kLoginStyle = TextStyle(
+TextStyle kLoginStyle = GoogleFonts.quicksand(
   color: kColorGrey,
   fontSize: 40,
   fontWeight: FontWeight.w500

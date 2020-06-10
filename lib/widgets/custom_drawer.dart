@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rgis/view/login/login_view.dart';
 import 'package:rgis/view/profile/profile_view.dart';
 import 'package:rgis/widgets/list_tile_drawer.dart';
 
@@ -84,7 +85,11 @@ class CustomDrawer extends StatelessWidget {
                     color: Colors.grey,
                   ),
                   ListTileDrawer(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context)=> LoginView())
+                      );
+                    },
                     icon: Icons.exit_to_app,
                     label: 'Desconectar',
                     selection: false,
